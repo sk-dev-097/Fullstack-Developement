@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Portfolio</title>
+    <style>
+        /* ---------- Base Reset ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* ---------- Header ---------- */
+        #main-header {
+            text-align: center;
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 40px 20px 25px;
+        }
+
+        #main-header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        #main-header p {
+            margin-top: 8px;
+            font-size: 1.1rem;
+            color: #cfd8e3;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #dcdfe3;
+            margin: 0;
+        }
+
+        /* ---------- Navigation ---------- */
+        #main-nav {
+            text-align: center;
+            background-color: #34495e;
+            padding: 14px 0;
+        }
+
+        #main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        
+        /* ---------- Sections (shared class) ---------- */
+        .content-section {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* ---------- About ---------- */
+        #about p {
+            font-size: 1rem;
+        }
+
+        /* ---------- Skills ---------- */
+        #skills ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        #skills li {
+            margin-bottom: 8px;
+        }
+
+        /* ---------- Education Table ---------- */
+        #education table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        #education th {
+            background-color: #1abc9c;
+            color: #ffffff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #education td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        #education tr:hover {
+            background-color: #f1f9f7;
+        }
+
+        /* ---------- Contact Form ---------- */
+        #contact label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        #contact input[type="text"]:focus,
+        #contact input[type="email"]:focus,
+        #contact textarea:focus {
+            outline: none;
+            border-color: #1abc9c;
+        }
+
+        .submit-btn {
+            background-color: #1abc9c;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #16a085;
+        }
+
+        /* ---------- Footer ---------- */
+        #main-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 18px;
+            background-color: #2c3e50;
+            color: #cfd8e3;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Intro -->
+    <header id="main-header">
+        <h1>Sriram Karthik S</h1>
+        <p><i>Full-Stack Web Developer &amp; Student</i></p>
+    </header>
+    <hr class="divider">
+
+    <!-- Navigation Links -->
+    <nav id="main-nav">
+        <a href="#about">About</a> |
+        <a href="#skills">Skills</a> |
+        <a href="#education">Education</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>Hello! I am a passionate developer learning <b>Full-Stack Engineering</b>. I love building web applications using modern technology.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="content-section">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li><b>Languages:</b> HTML5, CSS3, JavaScript</li>
+            <li><b>Frameworks:</b> React, Node.js</li>
+            <li><b>Tools:</b> Git, GitHub, VS Code</li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="content-section">
+        <h2>Education</h2>
+        <table>
+            <tr>
+                <th>Degree</th>
+                <th>Institution</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>Higher Seconday</td>
+                <td>Erode Hindu Kalvi Nilayam</td>
+                <td>2023 - 2025</td>
+            </tr>
+            <tr>
+                <td>B.Tech Information Technology</td>
+                <td>Kongu Engineering College</td>
+                <td>2025 - 2029</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="content-section">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="message" rows="3"></textarea>
+
+            <input type="submit" value="Send Message" class="submit-btn">
+        </form>
+    </section>
+
+    <footer id="main-footer">
+        <p>&copy; 2026 Sriram Karthik. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
