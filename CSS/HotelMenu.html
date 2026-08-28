@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Menu Card</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        #menu-card {
+            background-color: white;
+            width: 350px;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #menu-title {
+            text-align: center;
+            color: grey;
+            margin-bottom: 5px;
+        }
+
+        #menu-subtitle {
+            text-align: center;
+            color: grey;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 20px;
+        }
+
+        .section-heading {
+            color: black;
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .item-name {
+            color: black;
+        }
+
+        .item-price {
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-card">
+
+        <h1 id="menu-title">The Grand Palace Hotel</h1>
+        <p id="menu-subtitle">Today's Menu</p>
+
+        <!-- Starters Section -->
+        <div class="menu-section">
+            <h2 class="section-heading">Starters</h2>
+
+            <div class="menu-item">
+                <span class="item-name">Veg Soup</span>
+                <span class="item-price">₹80</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Paneer Tikka</span>
+                <span class="item-price">₹150</span>
+            </div>
+        </div>
+
+        <!-- Main Course Section -->
+        <div class="menu-section">
+            <h2 class="section-heading">Main Course</h2>
+
+            <div class="menu-item">
+                <span class="item-name">Butter Chicken</span>
+                <span class="item-price">₹280</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Veg Biryani</span>
+                <span class="item-price">₹220</span>
+            </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="menu-section">
+            <h2 class="section-heading">Desserts</h2>
+
+            <div class="menu-item">
+                <span class="item-name">Gulab Jamun</span>
+                <span class="item-price">₹60</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Ice Cream</span>
+                <span class="item-price">₹90</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
