@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form id="registrationForm">
+
+    <label>Name:</label>
+    <input type="text" id="name">
+    <span id="nameError"></span>
+    <br><br>
+
+    <label>Email:</label>
+    <input type="text" id="email">
+    <span id="emailError"></span>
+    <br><br>
+
+    <label>Mobile Number:</label>
+    <input type="text" id="mobile">
+    <span id="mobileError"></span>
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password">
+    <span id="passwordError"></span>
+    <br><br>
+
+    <label>Confirm Password:</label>
+    <input type="password" id="confirmPassword">
+    <span id="confirmPasswordError"></span>
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" id="age">
+    <span id="ageError"></span>
+    <br><br>
+
+    <label>Course:</label>
+
+    <select id="course">
+        <option value="">-- Select Course --</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="NodeJS">Node.js</option>
+        <option value="Python">Python</option>
+    </select>
+
+    <span id="courseError"></span>
+    <br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<p id="successMessage"></p>
+
+
+<script>
+
+document
+.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let valid = true;
+
+    // Get input values
+    let name =
+        document.getElementById("name").value.trim();
+
+    let email =
+        document.getElementById("email").value.trim();
+
+    let mobile =
+        document.getElementById("mobile").value.trim();
+
+    let password =
+        document.getElementById("password").value;
+
+    let confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    let age =
+        document.getElementById("age").value;
+
+    let course =
+        document.getElementById("course").value;
+
+
+    // Clear previous errors
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("mobileError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+    document.getElementById("confirmPasswordError").textContent = "";
+    document.getElementById("ageError").textContent = "";
+    document.getElementById("courseError").textContent = "";
+    document.getElementById("successMessage").textContent = "";
+
+
+    // Name validation
+    if (name === "") {
+
+        document.getElementById("nameError")
+        .textContent = "Name is required.";
+
+        valid = false;
+
+    } else if (name.length < 3) {
+
+        document.getElementById("nameError")
+        .textContent =
+        "Name must contain at least 3 characters.";
+
+        valid = false;
+    }
+
+
+    // Email validation
+    let emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+
+        document.getElementById("emailError")
+        .textContent = "Email is required.";
+
+        valid = false;
+
+    } else if (!emailPattern.test(email)) {
+
+        document.getElementById("emailError")
+        .textContent = "Enter a valid email address.";
+
+        valid = false;
+    }
+
+
+    // Mobile validation
+    let mobilePattern = /^[0-9]{10}$/;
+
+    if (!mobilePattern.test(mobile)) {
+
+        document.getElementById("mobileError")
+        .textContent =
+        "Mobile number must contain exactly 10 digits.";
+
+        valid = false;
+    }
+
+
+    // Password validation
+    if (password.length < 6) {
+
+        document.getElementById("passwordError")
+        .textContent =
+        "Password must contain at least 6 characters.";
+
+        valid = false;
+    }
+
+
+    // Confirm password validation
+    if (password !== confirmPassword) {
+
+        document.getElementById("confirmPasswordError")
+        .textContent =
+        "Passwords do not match.";
+
+        valid = false;
+    }
+
+
+    // Age validation
+    if (age === "") {
+
+        document.getElementById("ageError")
+        .textContent = "Age is required.";
+
+        valid = false;
+
+    } else if (age < 18 || age > 60) {
+
+        document.getElementById("ageError")
+        .textContent =
+        "Age must be between 18 and 60.";
+
+        valid = false;
+    }
+
+
+    // Course validation
+    if (course === "") {
+
+        document.getElementById("courseError")
+        .textContent =
+        "Please select a course.";
+
+        valid = false;
+    }
+
+
+    // Final result
+    if (valid) {
+
+        document.getElementById("successMessage")
+        .textContent =
+        "Registration successful!";
+
+        document.getElementById("registrationForm")
+        .reset();
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
