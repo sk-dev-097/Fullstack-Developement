@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Operators Demo</title>
+</head>
+<body>
+
+<h1>JavaScript Operators - All in One Demo</h1>
+
+<h2>1. Arithmetic Operators</h2>
+<pre id="arithmetic"></pre>
+
+<h2>2. Assignment Operators</h2>
+<pre id="assignment"></pre>
+
+<h2>3. Comparison Operators</h2>
+<pre id="comparison"></pre>
+
+<h2>4. Logical Operators</h2>
+<pre id="logical"></pre>
+
+<h2>5. Bitwise Operators</h2>
+<pre id="bitwise"></pre>
+
+<h2>6. String Operators</h2>
+<pre id="string"></pre>
+
+<h2>7. Ternary (Conditional) Operator</h2>
+<pre id="ternary"></pre>
+
+<h2>8. Type Operators (typeof, instanceof)</h2>
+<pre id="type"></pre>
+
+<h2>9. Nullish Coalescing & Optional Chaining</h2>
+<pre id="nullish"></pre>
+
+<h2>10. Increment / Decrement Operators</h2>
+<pre id="incdec"></pre>
+
+<script>
+  // Helper to print output into a given element
+  function show(id, text) {
+    document.getElementById(id).textContent += text + "\n";
+  }
+
+  // ---------- 1. Arithmetic Operators ----------
+  let a = 10, b = 3;
+  show("arithmetic", `a = ${a}, b = ${b}`);
+  show("arithmetic", `a + b = ${a + b}`);   // Addition
+  show("arithmetic", `a - b = ${a - b}`);   // Subtraction
+  show("arithmetic", `a * b = ${a * b}`);   // Multiplication
+  show("arithmetic", `a / b = ${a / b}`);   // Division
+  show("arithmetic", `a % b = ${a % b}`);   // Modulus (remainder)
+  show("arithmetic", `a ** b = ${a ** b}`); // Exponentiation
+
+  // ---------- 2. Assignment Operators ----------
+  let x = 5;
+  show("assignment", `x = ${x}`);
+  x += 3; show("assignment", `x += 3 -> ${x}`);
+  x -= 2; show("assignment", `x -= 2 -> ${x}`);
+  x *= 4; show("assignment", `x *= 4 -> ${x}`);
+  x /= 2; show("assignment", `x /= 2 -> ${x}`);
+  x %= 5; show("assignment", `x %= 5 -> ${x}`);
+  x **= 2; show("assignment", `x **= 2 -> ${x}`);
+
+  // ---------- 3. Comparison Operators ----------
+  let p = 5, q = "5";
+  show("comparison", `p = ${p} (number), q = "${q}" (string)`);
+  show("comparison", `p == q  -> ${p == q}`);   // loose equality
+  show("comparison", `p === q -> ${p === q}`);  // strict equality
+  show("comparison", `p != q  -> ${p != q}`);
+  show("comparison", `p !== q -> ${p !== q}`);
+  show("comparison", `p > 3   -> ${p > 3}`);
+  show("comparison", `p < 3   -> ${p < 3}`);
+  show("comparison", `p >= 5  -> ${p >= 5}`);
+  show("comparison", `p <= 4  -> ${p <= 4}`);
+
+  // ---------- 4. Logical Operators ----------
+  let t = true, f = false;
+  show("logical", `t = ${t}, f = ${f}`);
+  show("logical", `t && f -> ${t && f}`); // AND
+  show("logical", `t || f -> ${t || f}`); // OR
+  show("logical", `!t     -> ${!t}`);     // NOT
+
+  // ---------- 5. Increment / Decrement ----------
+  let counter = 5;
+  show("incdec", `counter = ${counter}`);
+  show("incdec", `counter++ (used) -> ${counter++}`); // post-increment
+  show("incdec", `counter after post++ -> ${counter}`);
+  show("incdec", `++counter (used) -> ${++counter}`); // pre-increment
+  show("incdec", `counter-- (used) -> ${counter--}`); // post-decrement
+  show("incdec", `counter after post-- -> ${counter}`);
+  show("incdec", `--counter (used) -> ${--counter}`); // pre-decrement
+</script>
+
+</body>
+</html>
