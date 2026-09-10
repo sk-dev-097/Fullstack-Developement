@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Variables & Data Types Demo</title>
+</head>
+<body>
+
+<h1>JavaScript Variables & Data Types</h1>
+
+<h2>1. var, let, const</h2>
+<pre id="declare"></pre>
+
+<h2>2. String</h2>
+<pre id="string"></pre>
+
+<h2>3. Number</h2>
+<pre id="number"></pre>
+
+<h2>4. Boolean</h2>
+<pre id="boolean"></pre>
+
+<h2>5. Undefined</h2>
+<pre id="undefined"></pre>
+
+<h2>6. Null</h2>
+<pre id="null"></pre>
+
+<h2>7. Object</h2>
+<pre id="object"></pre>
+
+<h2>8. Array</h2>
+<pre id="array"></pre>
+
+<h2>9. typeof Operator</h2>
+<pre id="typeofdemo"></pre>
+
+<h2>10. let vs const (reassigning)</h2>
+<pre id="reassign"></pre>
+
+<script>
+  // Helper to print output into a given element
+  function show(id, text) {
+    document.getElementById(id).textContent += text + "\n";
+  }
+
+  // ---------- 1. var, let, const ----------
+  var oldWay = "I am declared with var";
+  let newWay = "I am declared with let";
+  const fixedValue = "I am declared with const";
+  show("declare", `var oldWay = "${oldWay}"`);
+  show("declare", `let newWay = "${newWay}"`);
+  show("declare", `const fixedValue = "${fixedValue}"`);
+
+  // ---------- 2. String ----------
+  let name = "Alex";
+  show("string", `let name = "Alex"`);
+  show("string", `typeof name -> ${typeof name}`);
+  show("string", `name -> ${name}`);
+
+  // ---------- 3. Number ----------
+  let score = 95;
+  let price = 19.99;
+  show("number", `let score = 95`);
+  show("number", `let price = 19.99`);
+  show("number", `typeof score -> ${typeof score}`);
+  show("number", `typeof price -> ${typeof price}`);
+
+  // ---------- 4. Boolean ----------
+  let isOnline = true;
+  let isOffline = false;
+  show("boolean", `let isOnline = true`);
+  show("boolean", `let isOffline = false`);
+  show("boolean", `typeof isOnline -> ${typeof isOnline}`);
+
+  // ---------- 5. Undefined ----------
+  let notAssignedYet;
+  show("undefined", `let notAssignedYet;  (no value given)`);
+  show("undefined", `notAssignedYet -> ${notAssignedYet}`);
+  show("undefined", `typeof notAssignedYet -> ${typeof notAssignedYet}`);
+
+  // ---------- 6. Null ----------
+  let emptyValue = null;
+  show("null", `let emptyValue = null;`);
+  show("null", `emptyValue -> ${emptyValue}`);
+  show("null", `typeof emptyValue -> ${typeof emptyValue}`);
+  show("null", `(Note: typeof null shows "object" - this is a known JS quirk)`);
+
+  // ---------- 7. Object ----------
+  let person = {
+    name: "Alex",
+    age: 21,
+    isStudent: true
+  };
+  show("object", `let person = { name: "Alex", age: 21, isStudent: true }`);
+  show("object", `person.name -> ${person.name}`);
+  show("object", `person.age -> ${person.age}`);
+  show("object", `typeof person -> ${typeof person}`);
+
+  // ---------- 8. Array ----------
+  let fruits = ["Apple", "Banana", "Mango"];
+  show("array", `let fruits = ["Apple", "Banana", "Mango"]`);
+  show("array", `fruits[0] -> ${fruits[0]}`);
+  show("array", `fruits[2] -> ${fruits[2]}`);
+  show("array", `fruits.length -> ${fruits.length}`);
+  show("array", `typeof fruits -> ${typeof fruits}  (arrays are technically objects)`);
+
+  // ---------- 9. typeof Operator Summary ----------
+  show("typeofdemo", `typeof "hello"    -> ${typeof "hello"}`);
+  show("typeofdemo", `typeof 42         -> ${typeof 42}`);
+  show("typeofdemo", `typeof true       -> ${typeof true}`);
+  show("typeofdemo", `typeof undefined  -> ${typeof undefined}`);
+  show("typeofdemo", `typeof null       -> ${typeof null}`);
+  show("typeofdemo", `typeof {}         -> ${typeof {}}`);
+  show("typeofdemo", `typeof []         -> ${typeof []}`);
+
+  // ---------- 10. let vs const (reassigning) ----------
+  let changeableAge = 20;
+  show("reassign", `let changeableAge = 20`);
+  changeableAge = 21;
+  show("reassign", `changeableAge = 21  (this works fine with let)`);
+
+  const birthYear = 2005;
+  show("reassign", `const birthYear = 2005`);
+  show("reassign", `Trying to change birthYear would cause an ERROR`);
+  show("reassign", `(const values cannot be reassigned once set)`);
+</script>
+
+</body>
+</html>
