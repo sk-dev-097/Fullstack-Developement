@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Loops Demo</title>
+</head>
+<body>
+
+<h1>JavaScript Loops</h1>
+
+<h2>1. Basic for loop</h2>
+<pre id="basicfor"></pre>
+
+<h2>2. for loop counting down</h2>
+<pre id="countdown"></pre>
+
+<h2>3. while loop</h2>
+<pre id="whileloop"></pre>
+
+<h2>4. do...while loop</h2>
+<pre id="dowhile"></pre>
+
+<h2>5. Looping through an array (for)</h2>
+<pre id="arrayfor"></pre>
+
+<h2>6. for...of loop</h2>
+<pre id="forof"></pre>
+
+<h2>7. for...in loop (objects)</h2>
+<pre id="forin"></pre>
+
+<h2>8. break statement</h2>
+<pre id="breakdemo"></pre>
+
+<h2>9. continue statement</h2>
+<pre id="continuedemo"></pre>
+
+<h2>10. Nested loops</h2>
+<pre id="nestedloop"></pre>
+
+<script>
+  function show(id, text) {
+    document.getElementById(id).textContent += text + "\n";
+  }
+
+  // ---------- 1. Basic for loop ----------
+  show("basicfor", `for (let i = 1; i <= 5; i++)`);
+  for (let i = 1; i <= 5; i++) {
+    show("basicfor", `i = ${i}`);
+  }
+
+  // ---------- 2. for loop counting down ----------
+  show("countdown", `for (let i = 5; i >= 1; i--)`);
+  for (let i = 5; i >= 1; i--) {
+    show("countdown", `i = ${i}`);
+  }
+
+  // ---------- 3. while loop ----------
+  let count = 1;
+  show("whileloop", `let count = 1; while (count <= 5)`);
+  while (count <= 5) {
+    show("whileloop", `count = ${count}`);
+    count++;
+  }
+
+  // ---------- 4. do...while loop ----------
+  let num = 1;
+  show("dowhile", `let num = 1; do...while (num <= 5)`);
+  do {
+    show("dowhile", `num = ${num}`);
+    num++;
+  } while (num <= 5);
+
+  // ---------- 5. Looping through an array (for) ----------
+  let fruits = ["Apple", "Banana", "Mango"];
+  show("arrayfor", `let fruits = ["Apple", "Banana", "Mango"]`);
+  for (let i = 0; i < fruits.length; i++) {
+    show("arrayfor", `fruits[${i}] -> ${fruits[i]}`);
+  }
+
+  // ---------- 6. for...of loop ----------
+  show("forof", `for (let fruit of fruits)`);
+  for (let fruit of fruits) {
+    show("forof", `fruit -> ${fruit}`);
+  }
+
+  // ---------- 7. for...in loop (objects) ----------
+  let person = { name: "Alex", age: 21, isStudent: true };
+  show("forin", `let person = { name: "Alex", age: 21, isStudent: true }`);
+  for (let key in person) {
+    show("forin", `${key} -> ${person[key]}`);
+  }
+
+  // ---------- 8. break statement ----------
+  show("breakdemo", `for (let i = 1; i <= 10; i++) with break at i === 5`);
+  for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+      show("breakdemo", `i === 5, breaking loop`);
+      break;
+    }
+    show("breakdemo", `i = ${i}`);
+  }
+
+  // ---------- 9. continue statement ----------
+  show("continuedemo", `for (let i = 1; i <= 5; i++) skipping even numbers`);
+  for (let i = 1; i <= 5; i++) {
+    if (i % 2 === 0) {
+      continue;
+    }
+    show("continuedemo", `i = ${i}`);
+  }
+
+  // ---------- 10. Nested loops ----------
+  show("nestedloop", `Nested loop: rows and columns (3x3)`);
+  for (let row = 1; row <= 3; row++) {
+    for (let col = 1; col <= 3; col++) {
+      show("nestedloop", `row ${row}, col ${col}`);
+    }
+  }
+</script>
+
+</body>
+</html>
