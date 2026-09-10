@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Conditionals Demo</title>
+</head>
+<body>
+
+<h1>JavaScript Conditionals</h1>
+
+<h2>1. if statement</h2>
+<pre id="ifonly"></pre>
+
+<h2>2. if...else</h2>
+<pre id="ifelse"></pre>
+
+<h2>3. if...else if...else</h2>
+<pre id="ifelseif"></pre>
+
+<h2>4. Nested if</h2>
+<pre id="nested"></pre>
+
+<h2>5. Comparison in Conditions</h2>
+<pre id="comparison"></pre>
+
+<h2>6. Logical Operators in Conditions</h2>
+<pre id="logical"></pre>
+
+<h2>7. Ternary Operator</h2>
+<pre id="ternary"></pre>
+
+<h2>8. switch Statement</h2>
+<pre id="switchdemo"></pre>
+
+<h2>9. switch with Multiple Cases</h2>
+<pre id="switchmulti"></pre>
+
+<h2>10. Truthy / Falsy Values</h2>
+<pre id="truthy"></pre>
+
+<script>
+  function show(id, text) {
+    document.getElementById(id).textContent += text + "\n";
+  }
+
+  // ---------- 1. if statement ----------
+  let age = 20;
+  show("ifonly", `let age = 20`);
+  if (age >= 18) {
+    show("ifonly", `age >= 18 is true -> "You are an adult"`);
+  }
+
+  // ---------- 2. if...else ----------
+  let temperature = 15;
+  show("ifelse", `let temperature = 15`);
+  if (temperature > 25) {
+    show("ifelse", `-> "It's hot outside"`);
+  } else {
+    show("ifelse", `-> "It's not hot outside"`);
+  }
+
+  // ---------- 3. if...else if...else ----------
+  let marks = 72;
+  show("ifelseif", `let marks = 72`);
+  if (marks >= 90) {
+    show("ifelseif", `-> Grade A`);
+  } else if (marks >= 70) {
+    show("ifelseif", `-> Grade B`);
+  } else if (marks >= 50) {
+    show("ifelseif", `-> Grade C`);
+  } else {
+    show("ifelseif", `-> Grade F`);
+  }
+
+  // ---------- 4. Nested if ----------
+  let userAge = 25;
+  let hasID = true;
+  show("nested", `let userAge = 25, hasID = true`);
+  if (userAge >= 18) {
+    if (hasID) {
+      show("nested", `-> "Entry allowed"`);
+    } else {
+      show("nested", `-> "ID required"`);
+    }
+  } else {
+    show("nested", `-> "Too young to enter"`);
+  }
+
+  // ---------- 5. Comparison in Conditions ----------
+  let a = 10, b = 20;
+  show("comparison", `let a = 10, b = 20`);
+  if (a < b) {
+    show("comparison", `a < b is true -> "a is smaller"`);
+  }
+
+  // ---------- 6. Logical Operators in Conditions ----------
+  let hasTicket = true;
+  let isVIP = false;
+  show("logical", `let hasTicket = true, isVIP = false`);
+  if (hasTicket && !isVIP) {
+    show("logical", `hasTicket && !isVIP -> "Regular entry"`);
+  }
+  if (hasTicket || isVIP) {
+    show("logical", `hasTicket || isVIP -> "Can enter event"`);
+  }
+
+  // ---------- 7. Ternary Operator ----------
+  let num = 7;
+  let type = (num % 2 === 0) ? "Even" : "Odd";
+  show("ternary", `let num = 7`);
+  show("ternary", `(num % 2 === 0) ? "Even" : "Odd" -> ${type}`);
+
+  // ---------- 8. switch Statement ----------
+  let day = "Monday";
+  show("switchdemo", `let day = "Monday"`);
+  switch (day) {
+    case "Monday":
+      show("switchdemo", `-> "Start of the work week"`);
+      break;
+    case "Friday":
+      show("switchdemo", `-> "Almost weekend"`);
+      break;
+    default:
+      show("switchdemo", `-> "Just another day"`);
+  }
+
+  // ---------- 9. switch with Multiple Cases ----------
+  let month = "July";
+  show("switchmulti", `let month = "July"`);
+  switch (month) {
+    case "June":
+    case "July":
+    case "August":
+      show("switchmulti", `-> "Summer season"`);
+      break;
+    case "December":
+    case "January":
+    case "February":
+      show("switchmulti", `-> "Winter season"`);
+      break;
+    default:
+      show("switchmulti", `-> "Other season"`);
+  }
+
+  // ---------- 10. Truthy / Falsy Values ----------
+  show("truthy", `Falsy values: 0, "", null, undefined, NaN, false`);
+  if (0) { show("truthy", "0 is truthy"); } else { show("truthy", "0 is falsy"); }
+  if ("") { show("truthy", '"" is truthy'); } else { show("truthy", '"" is falsy'); }
+  if ("hello") { show("truthy", '"hello" is truthy'); } else { show("truthy", '"hello" is falsy'); }
+  if (1) { show("truthy", "1 is truthy"); } else { show("truthy", "1 is falsy"); }
+</script>
+
+</body>
+</html>
