@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Arrays Demo</title>
+</head>
+<body>
+
+<h1>JavaScript Arrays</h1>
+
+<h2>1. Creating an Array</h2>
+<pre id="create"></pre>
+
+<h2>2. Accessing Elements</h2>
+<pre id="access"></pre>
+
+<h2>3. Array Length</h2>
+<pre id="length"></pre>
+
+<h2>4. push() and pop()</h2>
+<pre id="pushpop"></pre>
+
+<h2>5. shift() and unshift()</h2>
+<pre id="shiftunshift"></pre>
+
+<h2>6. map()</h2>
+<pre id="map"></pre>
+
+<h2>7. filter()</h2>
+<pre id="filter"></pre>
+
+<h2>8. forEach()</h2>
+<pre id="foreach"></pre>
+
+<h2>9. find()</h2>
+<pre id="find"></pre>
+
+<h2>10. sort() and reverse()</h2>
+<pre id="sortreverse"></pre>
+
+<script>
+  function show(id, text) {
+    document.getElementById(id).textContent += text + "\n";
+  }
+
+  // ---------- 1. Creating an Array ----------
+  let fruits = ["Apple", "Banana", "Mango"];
+  show("create", `let fruits = ["Apple", "Banana", "Mango"]`);
+  show("create", `fruits -> ${fruits}`);
+
+  // ---------- 2. Accessing Elements ----------
+  show("access", `fruits[0] -> ${fruits[0]}`);
+  show("access", `fruits[1] -> ${fruits[1]}`);
+  show("access", `fruits[2] -> ${fruits[2]}`);
+
+  // ---------- 3. Array Length ----------
+  show("length", `fruits.length -> ${fruits.length}`);
+
+  // ---------- 4. push() and pop() ----------
+  let numbers = [1, 2, 3];
+  show("pushpop", `let numbers = [1, 2, 3]`);
+  numbers.push(4);
+  show("pushpop", `numbers.push(4) -> ${numbers}`);
+  numbers.pop();
+  show("pushpop", `numbers.pop() -> ${numbers}`);
+
+  // ---------- 5. shift() and unshift() ----------
+  let colors = ["Red", "Green", "Blue"];
+  show("shiftunshift", `let colors = ["Red", "Green", "Blue"]`);
+  colors.unshift("Yellow");
+  show("shiftunshift", `colors.unshift("Yellow") -> ${colors}`);
+  colors.shift();
+  show("shiftunshift", `colors.shift() -> ${colors}`);
+
+  // ---------- 6. map() ----------
+  let nums = [1, 2, 3, 4];
+  let doubled = nums.map(function(n) {
+    return n * 2;
+  });
+  show("map", `let nums = [1, 2, 3, 4]`);
+  show("map", `nums.map(n => n * 2) -> ${doubled}`);
+
+  // ---------- 7. filter() ----------
+  let ages = [12, 18, 25, 15, 30];
+  let adults = ages.filter(function(age) {
+    return age >= 18;
+  });
+  show("filter", `let ages = [12, 18, 25, 15, 30]`);
+  show("filter", `ages.filter(age => age >= 18) -> ${adults}`);
+
+  // ---------- 8. forEach() ----------
+  let animals = ["Cat", "Dog", "Bird"];
+  show("foreach", `let animals = ["Cat", "Dog", "Bird"]`);
+  animals.forEach(function(animal, index) {
+    show("foreach", `Index ${index} -> ${animal}`);
+  });
+
+  // ---------- 9. find() ----------
+  let scores = [45, 67, 89, 32, 90];
+  let firstPass = scores.find(function(score) {
+    return score >= 50;
+  });
+  show("find", `let scores = [45, 67, 89, 32, 90]`);
+  show("find", `scores.find(score => score >= 50) -> ${firstPass}`);
+
+  // ---------- 10. sort() and reverse() ----------
+  let items = [5, 3, 8, 1, 9];
+  show("sortreverse", `let items = [5, 3, 8, 1, 9]`);
+  let sorted = [...items].sort(function(a, b) {
+    return a - b;
+  });
+  show("sortreverse", `sorted -> ${sorted}`);
+  let reversed = [...sorted].reverse();
+  show("sortreverse", `reversed -> ${reversed}`);
+</script>
+
+</body>
+</html>
