@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Strings Demo</title>
+</head>
+<body>
+
+<h1>JavaScript Strings</h1>
+
+<h2>1. Creating Strings</h2>
+<pre id="create"></pre>
+
+<h2>2. Template Literals</h2>
+<pre id="template"></pre>
+
+<h2>3. String Length</h2>
+<pre id="length"></pre>
+
+<h2>4. Accessing Characters</h2>
+<pre id="access"></pre>
+
+<h2>5. toUpperCase / toLowerCase</h2>
+<pre id="case"></pre>
+
+<h2>6. slice()</h2>
+<pre id="slice"></pre>
+
+<h2>7. includes()</h2>
+<pre id="includes"></pre>
+
+<h2>8. split()</h2>
+<pre id="split"></pre>
+
+<h2>9. trim()</h2>
+<pre id="trim"></pre>
+
+<h2>10. replace()</h2>
+<pre id="replace"></pre>
+
+<script>
+  function show(id, text) {
+    document.getElementById(id).textContent += text + "\n";
+  }
+
+  // ---------- 1. Creating Strings ----------
+  let single = 'Hello';
+  let double = "World";
+  show("create", `let single = 'Hello'`);
+  show("create", `let double = "World"`);
+  show("create", `single + " " + double -> ${single + " " + double}`);
+
+  // ---------- 2. Template Literals ----------
+  let name = "Alex";
+  let age = 21;
+  let intro = `My name is ${name} and I am ${age} years old.`;
+  show("template", `let name = "Alex", age = 21`);
+  show("template", `\`My name is \${name} and I am \${age} years old.\``);
+  show("template", `Result -> ${intro}`);
+
+  // ---------- 3. String Length ----------
+  let word = "JavaScript";
+  show("length", `let word = "JavaScript"`);
+  show("length", `word.length -> ${word.length}`);
+
+  // ---------- 4. Accessing Characters ----------
+  show("access", `word = "JavaScript"`);
+  show("access", `word[0] -> ${word[0]}`);
+  show("access", `word[4] -> ${word[4]}`);
+  show("access", `word.charAt(3) -> ${word.charAt(3)}`);
+
+  // ---------- 5. toUpperCase / toLowerCase ----------
+  let mixed = "Hello World";
+  show("case", `let mixed = "Hello World"`);
+  show("case", `mixed.toUpperCase() -> ${mixed.toUpperCase()}`);
+  show("case", `mixed.toLowerCase() -> ${mixed.toLowerCase()}`);
+
+  // ---------- 6. slice() ----------
+  let sentence = "I love JavaScript";
+  show("slice", `let sentence = "I love JavaScript"`);
+  show("slice", `sentence.slice(2, 6) -> ${sentence.slice(2, 6)}`);
+  show("slice", `sentence.slice(7) -> ${sentence.slice(7)}`);
+
+  // ---------- 7. includes() ----------
+  show("includes", `sentence = "I love JavaScript"`);
+  show("includes", `sentence.includes("love") -> ${sentence.includes("love")}`);
+  show("includes", `sentence.includes("Python") -> ${sentence.includes("Python")}`);
+
+  // ---------- 8. split() ----------
+  let csv = "apple,banana,mango";
+  show("split", `let csv = "apple,banana,mango"`);
+  show("split", `csv.split(",") -> ${csv.split(",")}`);
+
+  // ---------- 9. trim() ----------
+  let messy = "   extra spaces   ";
+  show("trim", `let messy = "   extra spaces   "`);
+  show("trim", `messy.trim() -> "${messy.trim()}"`);
+
+  // ---------- 10. replace() ----------
+  let greeting = "Hello John";
+  show("replace", `let greeting = "Hello John"`);
+  show("replace", `greeting.replace("John", "Alex") -> ${greeting.replace("John", "Alex")}`);
+</script>
+
+</body>
+</html>
